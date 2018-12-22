@@ -26,7 +26,7 @@ class App extends Component {
             ? (
               <div><p>This is a paragraph.</p></div>
             )
-            : ''}
+            : null}
           <input onClick={this.handleClick} type="button" value="Hide/Show" />
         </header>
       </div>
