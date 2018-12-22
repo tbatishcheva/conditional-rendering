@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -7,15 +6,15 @@ class App extends Component {
     super(props);
 
     this.state = {
-      condition: true,
+      isDivShowed: true,
     };
   }
 
   handleClick = () => {
-    const { condition } = this.state;
+    const { isDivShowed } = this.state;
 
     this.setState({
-      condition: !condition,
+      isDivShowed: !isDivShowed,
     });
   };
 
@@ -23,8 +22,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <b>{this.state.condition ? <img src={logo} className="App-logo" alt="logo" /> : ''}</b>
-          <input onClick={this.handleClick} type="button" name="print" value="Hide/Show" />
+          {this.state.isDivShowed
+            ? (
+              <div><p>This is a paragraph.</p></div>
+            )
+            : ''}
+          <input onClick={this.handleClick} type="button" value="Hide/Show" />
         </header>
       </div>
     );
